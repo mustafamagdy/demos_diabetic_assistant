@@ -49,6 +49,7 @@ class ContainerWidget extends StatelessWidget {
                       end: Alignment.bottomRight,
                     ),
                   ),
+                  child: child,
                 ),
                 Positioned(
                   top: -30,
@@ -69,8 +70,8 @@ class ContainerWidget extends StatelessWidget {
           top: -20,
           left: 10,
           child: Container(
-            width: 50,
-            height: 50,
+            width: 60,
+            height: 60,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(iconFileName),

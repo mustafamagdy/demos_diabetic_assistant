@@ -103,7 +103,7 @@ class MainDashboardWidget extends StatelessWidget {
     required String label,
     required int weight,
   }) {
-    final width = 80.0;
+    final width = 60.0;
     return Container(
       width: width,
       height: 100,
