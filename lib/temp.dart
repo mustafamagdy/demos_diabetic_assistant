@@ -11,6 +11,8 @@ final colors = [
 ];
 
 Widget WidgetList() {
+  final double width = 140;
+  final double height = 200;
   return Container(
     width: 700,
     height: 200,
@@ -26,8 +28,8 @@ Widget WidgetList() {
             colors[1],
           ],
           child: _sampleMeal(),
-          width: 120,
-          height: 180,
+          width: width,
+          height: height,
         ),
         SizedBox(width: 10),
         ContainerWidget(
@@ -37,8 +39,8 @@ Widget WidgetList() {
             colors[3],
           ],
           child: _sampleMeal(),
-          width: 120,
-          height: 180,
+          width: width,
+          height: height,
         ),
         SizedBox(width: 10),
         ContainerWidget(
@@ -48,8 +50,8 @@ Widget WidgetList() {
             colors[5],
           ],
           child: _sampleMeal(),
-          width: 120,
-          height: 180,
+          width: width,
+          height: height,
         ),
         SizedBox(width: 10),
       ],
@@ -65,6 +67,7 @@ Widget _sampleMeal() {
       horizontal: 15,
     ),
     child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: 50),
         Text(

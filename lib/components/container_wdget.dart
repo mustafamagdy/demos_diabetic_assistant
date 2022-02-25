@@ -27,42 +27,49 @@ class ContainerWidget extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          decoration: BoxDecoration(boxShadow: [
-            BoxShadow(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
                 blurRadius: 20,
                 color: gradiantColors != null
-                    ? gradiantColors![0].withOpacity(0.2)
-                    : Colors.black.withOpacity(0.2),
-                offset: const Offset(0.0, 8.0))
-          ], borderRadius: borderRadius),
-          child: ClipRRect(
+                    ? gradiantColors![0].withOpacity(0.5)
+                    : Colors.black.withOpacity(0.5),
+                offset: const Offset(0, 8),
+              )
+            ],
             borderRadius: borderRadius,
-            child: Stack(
-              children: [
-                Container(
-                  width: width,
-                  height: height,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: gradiantColors!,
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
+          ),
+          child: Container(
+            margin: const EdgeInsets.only(right: 10),
+            child: ClipRRect(
+              borderRadius: borderRadius,
+              child: Stack(
+                children: [
+                  Container(
+                    width: width,
+                    height: height,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: gradiantColors!,
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    child: child,
+                  ),
+                  Positioned(
+                    top: -30,
+                    left: -10,
+                    child: ClipOval(
+                      child: Container(
+                        width: 90,
+                        height: 90,
+                        color: Colors.white.withOpacity(0.25),
+                      ),
                     ),
                   ),
-                  child: child,
-                ),
-                Positioned(
-                  top: -30,
-                  left: -10,
-                  child: ClipOval(
-                    child: Container(
-                      width: 90,
-                      height: 90,
-                      color: Colors.white.withOpacity(0.25),
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
